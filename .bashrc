@@ -119,5 +119,10 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# env exports that should remain permanent
 export PATH=$HOME/.local/bin:$PATH
 . "$HOME/.cargo/env"
+
+export PYTHONSTARTUP=~/.pythonrc
+

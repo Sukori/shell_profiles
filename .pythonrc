@@ -1,0 +1,66 @@
+# sh$ export PYTHONSTARTUP=~/.pythonrc
+
+import os
+import sys
+import datetime
+
+print(f"Current time: {datetime.datetime.now()}")
+
+# Customize the prompt
+def custom_prompt():
+    cwd = os.getcwd()
+    username = os.getlogin()
+    return f"{username}:{cwd} py3>>> "
+
+sys.ps1 = custom_prompt()
+sys.ps2 = '... '
+
+# Update prompt when directory changes
+import atexit
+
+def update_prompt(frame, event, arg):
+    if event == 'call':
+        if frame.f_code.co_name == 'chdir':
+            sys.ps1 = custom_prompt()
+    return update_prompt
+
+sys.setprofile(update_prompt)
+
+# Ensure the prompt updates on exit
+atexit.register(lambda: sys.ps1 == custom_prompt())
+
+# Bash-like commands
+def cd(path=None):
+    if path is None:
+        path = os.path.expanduser("~")
+    os.chdir(path)
+    sys.ps1 = custom_prompt()  # Update prompt after changing directory
+
+def pwd():
+    return os.getcwd()
+
+def ls(path='.'):
+    return os.listdir(path)
+
+def echo(*args):
+    print(*args)
+
+def export(var, value):
+    os.environ[var] = value
+
+def env():
+    return dict(os.environ)
+
+# Helper function to make environment variables accessible as attributes
+class Env:
+    def __getattr__(self, name):
+        return os.environ.get(name)
+
+    def __setattr__(self, name, value):
+        os.environ[name] = value
+
+ENV = Env()
+
+print("Bash-like commands available: cd, pwd, ls, echo, export, env")
+print("Use ENV.VARIABLE to access environment variables")
+
