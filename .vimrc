@@ -10,3 +10,4 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 set smartindent
+autocmd Filetype cpp setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
