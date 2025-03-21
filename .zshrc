@@ -1,6 +1,7 @@
 journalctl --vacuum-size=64M
 clear
-df -h | awk 'NR == 1 || NR == 10' 
+df -h | awk 'NR == 1'
+df -h | grep $(whoami)
 
 # version control
 autoload -Uz vcs_info
