@@ -1,5 +1,6 @@
 syntax on
 set number
+set relativenumber
 color elflord
 
 let g:user42 = 'pberset'
@@ -10,4 +11,3 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 set smartindent
-autocmd Filetype cpp setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
