@@ -1,7 +1,7 @@
 journalctl --vacuum-size=64M
 clear
 df -h | awk 'NR == 1'
-df -h | grep $(whoami)
+df -h | grep home
 
 # version control
 autoload -Uz vcs_info
@@ -24,3 +24,8 @@ PROMPT='
 ┌${INTENSE_GREEN}%n${INTENSE_YELLOW} @ ${INTENSE_RED}%m%f
 ├╴${INTENSE_BLUE}%~ %F{red}${vcs_info_msg_0_}%f
 └─: '
+
+source ~/.bash_aliases
+
+# Created by `pipx` on 2025-01-09 12:38:00
+export PATH="$PATH:/home/sukori/.local/bin"
