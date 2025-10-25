@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/sukori/Documents/code42/ft_cpp/cpp01/ex00/main'
+let g:netrw_dirhist_4='/home/sukori/Documents/code42/ft_cpp/cpp01/ex00/classes'
+let g:netrw_dirhist_3='/home/sukori/Documents/code42/42-priv/tronc_commun/philosophers/header'
+let g:netrw_dirhist_2='/home/sukori/Documents/code42/42-priv/tronc_commun/philosophers/src'
+let g:netrw_dirhist_1='/home/sukori/Documents/code42/42-priv/tronc_commun/philosophers/header'
