@@ -1,7 +1,12 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhistcnt =5
-let g:netrw_dirhist_5='/home/sukori/Documents/code42/ft_cpp/cpp01/ex00/main'
-let g:netrw_dirhist_4='/home/sukori/Documents/code42/ft_cpp/cpp01/ex00/classes'
-let g:netrw_dirhist_3='/home/sukori/Documents/code42/42-priv/tronc_commun/philosophers/header'
-let g:netrw_dirhist_2='/home/sukori/Documents/code42/42-priv/tronc_commun/philosophers/src'
-let g:netrw_dirhist_1='/home/sukori/Documents/code42/42-priv/tronc_commun/philosophers/header'
+let g:netrw_dirhist_5='/home/pberset/.vim/plugin'
+let g:netrw_dirhist_4='/home/pberset/.vim'
+let g:netrw_dirhist_3='/home/pberset'
+let g:netrw_dirhist_2='/home/pberset/.vim'
+let g:netrw_dirhist_1='/home/pberset/.vim/after'
+let g:netrw_dirhist_0='/home/pberset/.vim/after/ftplugin'
+let g:netrw_dirhist_9='/home/pberset/.vim/after'
+let g:netrw_dirhist_8='/home/pberset/.vim/after/plugin'
+let g:netrw_dirhist_7='/home/pberset/.vim/after'
+let g:netrw_dirhist_6='/home/pberset/Documents/code/ft_cpp/cpp06/ex02/headers'
