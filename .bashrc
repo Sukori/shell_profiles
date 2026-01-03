@@ -31,8 +31,15 @@ shopt -s checkwinsize
 #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+# Portable version:  works on Debian/Ubuntu and Fedora/RHEL
+if [ -z "${debian_chroot:-}" ]; then
+    if [ -r /etc/debian_chroot ]; then
+        # Debian/Ubuntu style
+        debian_chroot=$(cat /etc/debian_chroot)
+    elif [ "$(stat -c %d:%i / 2>/dev/null)" != "$(stat -c %d:%i /proc/1/root/. 2>/dev/null)" ]; then
+        # Fedora/RHEL/generic Linux:  compare root inode to init's root
+        debian_chroot="chroot"
+    fi
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
